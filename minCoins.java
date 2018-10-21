@@ -19,30 +19,29 @@ public class minCoins{
 		// - These are the coins we have
 		int coins[] =  {9, 6, 5, 1}; 
 		// - n represents the size of the array
-        int n = coins.length; 
-        // - change represents the change needed
-        int change = (int) (Math.random() * 50);
-        System.out.println("Minimum coins required is "+ minCoins(coins, n, change));
+        	int n = coins.length; 
+	        // - change represents the change needed
+        	int change = (int) (Math.random() * 50);
+	        System.out.println("Minimum coins required is "+ minCoins(coins, n, change));
 	}
 
-    public static int minCoins(int coins[], int n, int change) 
-    { 
-       // - If change is zero, then we will return 0 
-       	if(change == 0) 
-       		return 0; 
+    	public static int minCoins(int coins[], int n, int change){ 
+       		// - If change is zero, then we will return 0 
+	       	if(change == 0) 
+       			return 0; 
        
-       	int fin = Integer.MAX_VALUE; 
-       	int x;
-       	// - Here, we will try every coin
-       	for(int i=0; i < n; i++){ 
-         	if (coins[i] <= change){ 
-            	x = minCoins(coins, n, change-coins[i]);
-
-            	if (x != Integer.MAX_VALUE && x + 1 < fin) 
-                	fin = x + 1; 
-        	} 
-       	} 
-       	return fin; 
+	       	int fin = Integer.MAX_VALUE; 
+       		int x;
+	       	// - Here, we will try every coin
+       		for(int i=0; i < n; i++){ 
+         		if (coins[i] <= change){ 
+		            	x = minCoins(coins, n, change-coins[i]);
+	
+        	    	if (x != Integer.MAX_VALUE && x + 1 < fin) 
+                		fin = x + 1; 
+        		} 
+       		} 
+       		return fin; 
     }
 
 }
