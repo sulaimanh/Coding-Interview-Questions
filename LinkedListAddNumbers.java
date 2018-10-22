@@ -39,37 +39,37 @@ public class LinkedListAddNumbers{
 	}
 
 	public Node addTwoNumbers(Node l1, Node l2){
-        int x = getNumber(l1);
-        int y = getNumber(l2);
-        System.out.println("The two numbers are: \nx = "+x+"\ny = "+y);
-        int fin = x + y;
-        System.out.println("The result of adding these two numbers are: "+fin);
+        	int x = getNumber(l1);
+	        int y = getNumber(l2);
+        	System.out.println("The two numbers are: \nx = "+x+"\ny = "+y);
+	        int fin = x + y;
+        	System.out.println("The result of adding these two numbers are: "+fin);
         
-        int rem;
-        Node head = null;
-        Node temp = head;
-        while(fin != 0){
-            rem = fin % 10;
-            fin = fin/10;
-            if(head == null){
-                head = new Node(rem);
-                temp = head;
-            }else{
-                temp.next = new Node(rem);
-                temp = temp.next;
-            }
-        }
+	        int rem;
+        	Node head = null;
+	        Node temp = head;
+		while(fin != 0){
+		    rem = fin % 10;
+		    fin = fin/10;
+		    if(head == null){
+			head = new Node(rem);
+			temp = head;
+		    }else{
+			temp.next = new Node(rem);
+			temp = temp.next;
+		    }
+        	}
         
 
 
-        return head;
-    }
+        	return head;
+    	}
     
-    public int getNumber(Node node){
-        if(node.next == null)
-            return node.data;
-        return Integer.parseInt("" + getNumber(node.next) + node.data);
-    }
+    	public int getNumber(Node node){
+		if(node.next == null)
+		    return node.data;
+		return Integer.parseInt("" + getNumber(node.next) + node.data);
+    	}
 
 	public Node addToLinkedList(Node a){
 		Node newNode = new Node((int)(Math.random()*9)+1);
