@@ -1,48 +1,48 @@
 import java.util.*;
 
 /*
-	You are given two non-empty linked lists representing two non-negative integers. 
-	The digits are stored in reverse order and each of their nodes contain a single digit. 
-	Add the two numbers and return it as a linked list.
+    You are given two non-empty linked lists representing two non-negative integers. 
+    The digits are stored in reverse order and each of their nodes contain a single digit. 
+    Add the two numbers and return it as a linked list.
 
-	You may assume the two numbers do not contain any leading zero, except the number 0 itself.
+    You may assume the two numbers do not contain any leading zero, except the number 0 itself.
 
-	Example:
+    Example:
 
-	Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
-	Output: 7 -> 0 -> 8
-	Explanation: 342 + 465 = 807.
+    Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
+    Output: 7 -> 0 -> 8
+    Explanation: 342 + 465 = 807.
 
 */
 
 
-public class LinkedListAddNumbers{
+public class LinkedListNumbers{
 
-	class ListNode{
-		int val;
-		ListNode next;
-		public ListNode(int data){
-			this.val = data;
-			next = null;
-		}
-	}
+    class ListNode{
+        int val;
+        ListNode next;
+        public ListNode(int data){
+            this.val = data;
+            next = null;
+        }
+    }
 
-	public static void main(String [] args){
-		LinkedListAddNumbers linkNumbers = new LinkedListAddNumbers();
-		ListNode x = null;
-		ListNode y = null;
-		
-		x = linkNumbers.addToLinkedList(x);
-		y = linkNumbers.addToLinkedList(y);
+    public static void main(String [] args){
+        LinkedListAddNumbers linkNumbers = new LinkedListAddNumbers();
+        ListNode x = null;
+        ListNode y = null;
+        
+        x = linkNumbers.addToLinkedList(x);
+        y = linkNumbers.addToLinkedList(y);
 
-		linkNumbers.addTwoNumbers(x,y);
-	}
+        linkNumbers.addTwoNumbers(x,y);
+    }
 
-	public ListNode addTwoNumbers(ListNode l1, ListNode l2){
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2){
         return getNode(l1,l2);
     }
 
-	public ListNode getNode(ListNode l1, ListNode l2){
+    public ListNode getNode(ListNode l1, ListNode l2){
         ListNode head = null;
         ListNode temp = null;
         int addition;
@@ -97,17 +97,17 @@ public class LinkedListAddNumbers{
         return head;
     }
    
-	public ListNode addToLinkedList(ListNode a){
-		ListNode newNode = new ListNode((int)(Math.random()*9)+1);
-		if(a == null)
-			a = new ListNode((int)(Math.random()*9)+1);
+    public ListNode addToLinkedList(ListNode a){
+        ListNode newNode = new ListNode((int)(Math.random()*9)+1);
+        if(a == null)
+            a = new ListNode((int)(Math.random()*9)+1);
 
-		ListNode last = a;
-		for(int i = 0; i < 3; i++){
-			last.next = new ListNode((int)((Math.random()*9)+1));
-			last = last.next;
-		}
-		return a;
-	}
+        ListNode last = a;
+        for(int i = 0; i < 3; i++){
+            last.next = new ListNode((int)((Math.random()*9)+1));
+            last = last.next;
+        }
+        return a;
+    }
 
 }
